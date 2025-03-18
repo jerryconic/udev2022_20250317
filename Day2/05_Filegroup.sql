@@ -21,3 +21,46 @@ CREATE DATABASE [db01]
 ( NAME = N'db01_log', FILENAME = N'C:\SQLData\SQL2\db01_log.ldf' , SIZE = 8192KB , FILEGROWTH = 65536KB )
 --WITH LEDGER = OFF
 GO
+-------------------------------
+
+USE db01;
+
+CREATE TABLE dbo.OrdBefore
+(
+id int IDENTITY(1, 1) PRIMARY KEY,
+big_data nchar(4000)
+) ON YR_BEFORE;
+GO
+
+CREATE TABLE dbo.Ord2006
+(
+id int IDENTITY(1, 1) PRIMARY KEY,
+big_data nchar(4000)
+) ON YR_2006;
+GO
+
+CREATE TABLE dbo.Ord2007
+(
+id int IDENTITY(1, 1) PRIMARY KEY,
+big_data nchar(4000)
+) ON YR_2007;
+GO
+
+CREATE TABLE dbo.Ord2008
+(
+id int IDENTITY(1, 1) PRIMARY KEY,
+big_data nchar(4000)
+) ON YR_2008;
+GO
+
+INSERT INTO dbo.OrdBefore DEFAULT VALUES;
+GO 4096 -- 4*8 + 4 = 36 MB
+--36864 KB
+
+INSERT INTO dbo.Ord2006 DEFAULT VALUES;
+GO 2048 -- 2*8 + 4 = 20 MB
+--20480 KB
+
+INSERT INTO dbo.Ord2008 DEFAULT VALUES;
+GO 8192 -- 8*8 + 4 = 68 MB
+--69632 KB
