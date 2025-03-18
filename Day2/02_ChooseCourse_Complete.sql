@@ -134,3 +134,13 @@ k.*
 FROM sys.foreign_keys k
 INNER JOIN sys.objects o
 	ON k.parent_object_id = o.object_id
+GO
+-----------------------------------------------------
+
+EXECUTE sp_addextendedproperty N'MS_Description', N'學生基本資料', N'SCHEMA', N'dbo', N'TABLE', N'Student', NULL, NULL
+
+EXECUTE sp_addextendedproperty N'MS_Description', N'學生編號', N'SCHEMA', N'dbo', N'TABLE', N'Student', N'COLUMN', N'student_id'
+EXECUTE sp_addextendedproperty N'MS_Description', N'學生姓名', N'SCHEMA', N'dbo', N'TABLE', N'Student', N'COLUMN', N'student_name'
+EXECUTE sp_addextendedproperty N'MS_Description', N'電子郵件信箱', N'SCHEMA', N'dbo', N'TABLE', N'Student', N'COLUMN', N'email'
+
+GO

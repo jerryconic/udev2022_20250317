@@ -64,3 +64,4 @@ ALTER TABLE dbo.ChooseCourse ADD CONSTRAINT
 		ON UPDATE  NO ACTION 
 		ON DELETE  NO ACTION 
 GO
+---------------------------------------------------
