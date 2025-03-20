@@ -1,0 +1,16 @@
+/*
+USE db01;
+
+DELETE FROM dbo.Test;
+
+SELECT * FROM dbo.Test
+*/
+BEGIN TRAN;
+
+INSERT INTO dbo.Test(id) VALUES(1);
+
+WAITFOR DELAY '0:0:10';
+
+INSERT INTO dbo.Test(id) VALUES(10);
+
+ROLLBACK TRAN;

@@ -1,0 +1,3 @@
+USE db01;
+
+SELECT * FROM dbo.Test WITH(NOLOCK);
