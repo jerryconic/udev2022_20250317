@@ -1,0 +1,7 @@
+USE db01;
+
+BEGIN TRAN;
+	INSERT INTO dbo.Test(id) VALUES(1)
+
+	--WAIT
+ROLLBACK TRAN;
